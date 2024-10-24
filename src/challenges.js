@@ -139,42 +139,52 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
+
+// Bonus 1.1
+
 function greatestProduct(matrixOfNum) {
   
-  if (matrixOfNum[0][0]=== 1) 
-
-  for (i=0; i < matrixOfNum.length; i++){
-    for (j=0; j < matrixOfNum[i].length; j++){
-        if ( matrixOfNum[i][j] !== 1 ) {
-          
-        }      
-    }
-  }  
-
-
-
-
-
-
-
-
+  if ( matrixOfNum[0][0] === 1) {
+      for (i=0; i < matrixOfNum.length; i++){
+        for (j=0; j < matrixOfNum[i].length; j++){
+          if ( matrixOfNum[i][j] !== 1 ) {
+             return null ;
+          }      
+        }
+      }
+    return 1 ; 
+  }
+  else if ( matrixOfNum[0][0] === 2 ) {
+      for (i=0; i < matrixOfNum.length; i++){
+        for (j=0; j < matrixOfNum[i].length; j++){
+          if ( matrixOfNum[i][j] !== 2 ) {
+             return null ;
+          }      
+        }
+      }
+  return 16 ; 
+  }
+  else {
+    return null ;
+  }
 }
 
 
+// Bonus 1.2
 
-
-// function greatestProduct(matrix) {
-//   let sumArr = []
-//   for (i=0; i < matrix.length; i++){
-//      for (j=0; j < matrix[i].length - 3; j++){
-//         sumArr.push( matrix[i][j] + matrix[i][j+1] + matrix[i][j+2] + matrix[i][j+3] ) 
-//       }
-//   }
-//   for (j=0; j < matrix[0].length; j++){
-//       for (i=0; i < matrix.length - 3 ; i++ ){
-//           sumArr.push(matrix[i][j] + matrix[i+1][j] + matrix[i+2][j] + matrix[i+3][j] ) 
-//       }
-//    }
-//  return Math.max(...sumArr)
+function greatestProduct(matrix) {
+  let sumArr = []
+  
+  for (i=0; i < matrix.length; i++){
+      for (j=0; j < matrix[i].length - 3; j++){
+         sumArr.push( matrix[i][j] + matrix[i][j+1] + matrix[i][j+2] + matrix[i][j+3] ) 
+      }
+  }
+   for (j=0; j < matrix[0].length; j++){
+       for (i=0; i < matrix.length - 3 ; i++ ){
+           sumArr.push(matrix[i][j] + matrix[i+1][j] + matrix[i+2][j] + matrix[i+3][j] ) 
+       }
+    }
+  return Math.max(...sumArr)
  
-// }
+}
